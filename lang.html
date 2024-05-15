@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Elspace Tunis</title>
+  <style>
+    /* Style for the buttons */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      border-radius: 12px;
+    }
+
+    /* Style for the buttons */
+    button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    /* Hover effect */
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h2>Select Your Preferred Language</h2>
+    <button onclick="selectLanguage('en')">English</button>
+    <button onclick="selectLanguage('fr')">French</button>
+    <button onclick="selectLanguage('es')">Spanish</button>
+  </div>
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // When the window loads, display the modal
+  window.onload = function() {
+    modal.style.display = "block";
+  };
+
+  // Function to display the welcome message based on the selected language
+  function displayWelcomeMessage(language) {
+    var message;
+    switch (language) {
+      case 'en':
+        message = 'Welcome to Elspace Tunis';
+        break;
+      case 'fr':
+        message = 'Bienvenue à Elspace Tunis';
+        break;
+      case 'es':
+        message = 'Bienvenido a Elspace Tunis';
+        break;
+      default:
+        message = 'Welcome to Elspace Tunis';
+    }
+    alert(message);
+    // Close the modal after displaying the message
+    modal.style.display = "none";
+  }
+
+  // Function to select language and display welcome message
+  function selectLanguage(language) {
+    displayWelcomeMessage(language);
+  }
+</script>
+
+</body>
+</html>
